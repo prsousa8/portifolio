@@ -1,33 +1,33 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef(null); // Ref para o menu
-  const buttonRef = useRef(null); // Ref para o botão
+  const menuRef = useRef<HTMLDivElement | null>(null); // Ref para o menu
+  const buttonRef = useRef<HTMLButtonElement | null>(null); // Ref para o botão
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   // Função para fechar o menu ao clicar fora
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        menuRef.current && !menuRef.current.contains(event.target) &&
-        buttonRef.current && !buttonRef.current.contains(event.target)
-      ) {
-        setIsMenuOpen(false); // Fecha o menu se clicar fora
-      }
-    };
+  const handleClickOutside = useCallback((event: MouseEvent) => {
+    if (
+      menuRef.current && !menuRef.current.contains(event.target as Node) &&
+      buttonRef.current && !buttonRef.current.contains(event.target as Node)
+    ) {
+      setIsMenuOpen(false); // Fecha o menu se clicar fora
+    }
+  }, []);
 
+  useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [handleClickOutside]);
 
   // Função para fechar o menu ao clicar em um link
   const closeMenu = () => {
@@ -52,6 +52,7 @@ export default function Header() {
         ref={buttonRef}
         className="md:hidden text-2xl"
         onClick={toggleMenu}
+        aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
       >
         ☰
       </button>
