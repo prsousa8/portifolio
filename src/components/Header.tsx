@@ -34,7 +34,7 @@ export default function Header() {
   return (
     <>
       {!isMenuOpen && (
-        <header className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-4xl p-4 bg-gradient-to-r from-yellow-200/80 via-pink-200/80 to-purple-200/80 text-gray-900 flex justify-between items-center rounded-2xl backdrop-blur-md shadow-lg z-50">
+        <header className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-4xl p-4 bg-gradient-to-r from-yellow-200/80 via-pink-200/80 to-purple-200/80 text-gray-900 flex justify-between items-center rounded-2xl backdrop-blur-md shadow-lg z-50 transition-opacity duration-300 ease-in-out">
           <h1 className="text-xl font-bold">Meu Portfólio</h1>
           <nav className="hidden md:block">
             <ul className="flex gap-4">
@@ -54,26 +54,24 @@ export default function Header() {
           </button>
         </header>
       )}
-      {isMenuOpen && (
-        <div
-          ref={menuRef}
-          className="fixed top-0 left-0 w-full h-1/2 bg-gradient-to-r from-yellow-200/80 via-pink-200/80 to-purple-200/80 text-gray-900 shadow-lg p-6 flex flex-col items-center justify-center z-50"
+      <div
+        ref={menuRef}
+        className={`fixed top-0 left-0 w-full h-1/2 bg-gradient-to-r from-yellow-200/80 via-pink-200/80 to-purple-200/80 text-gray-900 shadow-lg p-6 flex flex-col items-center justify-center z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-y-0" : "-translate-y-full"}`}
+      >
+        <button
+          className="absolute top-4 right-4 text-2xl"
+          onClick={toggleMenu}
+          aria-label="Fechar menu"
         >
-          <button
-            className="absolute top-4 right-4 text-2xl"
-            onClick={toggleMenu}
-            aria-label="Fechar menu"
-          >
-            ✖
-          </button>
-          <ul className="flex flex-col gap-6 text-xl">
-            <li><a href="#about" className="hover:text-gray-600" onClick={closeMenu}>Sobre</a></li>
-            <li><a href="#skills" className="hover:text-gray-600" onClick={closeMenu}>Habilidades</a></li>
-            <li><a href="#projects" className="hover:text-gray-600" onClick={closeMenu}>Projetos</a></li>
-            <li><a href="#contact" className="hover:text-gray-600" onClick={closeMenu}>Contato</a></li>
-          </ul>
-        </div>
-      )}
+          ✖
+        </button>
+        <ul className="flex flex-col gap-6 text-xl">
+          <li><a href="#about" className="hover:text-gray-600" onClick={closeMenu}>Sobre</a></li>
+          <li><a href="#skills" className="hover:text-gray-600" onClick={closeMenu}>Habilidades</a></li>
+          <li><a href="#projects" className="hover:text-gray-600" onClick={closeMenu}>Projetos</a></li>
+          <li><a href="#contact" className="hover:text-gray-600" onClick={closeMenu}>Contato</a></li>
+        </ul>
+      </div>
     </>
   );
 }
