@@ -1,6 +1,6 @@
 <h1 align="center">Sejam bem vindos ao meu Portifólio</h1>
 
-<p align="justify">Olá, sou oPaulo Ricardo, um desenvolvedor front-end apaixonado por criar interfaces web responsivas e interativas. Com uma sólida base em HTML, CSS, JavaScript e frameworks modernos como React, busco sempre oferecer uma experiência de usuário fluida e intuitiva. Sou dedicado à constante evolução profissional, aprendendo novas tecnologias e aprimorando minhas habilidades para entregar projetos que atendam às necessidades e expectativas dos usuários. Meu portfólio reflete meu comprometimento com a qualidade, design e performance de cada site e aplicação que desenvolve.</p>
+<p align="justify">Olá, sou o Paulo Ricardo, um desenvolvedor front-end apaixonado por criar interfaces web responsivas e interativas. Com uma sólida base em HTML, CSS, JavaScript e frameworks modernos como React, busco sempre oferecer uma experiência de usuário fluida e intuitiva. Sou dedicado à constante evolução profissional, aprendendo novas tecnologias e aprimorando minhas habilidades para entregar projetos que atendam às necessidades e expectativas dos usuários. Meu portfólio reflete meu comprometimento com a qualidade, design e performance de cada site e aplicação que desenvolve.</p>
 
 <h2 align="center">Tecnologias utilizadas!</h2>
 <div align="center">
@@ -31,13 +31,13 @@ Para executar o projeto, realize as seguintes etapas:
 - Digite o comando via terminal
 
 ~~~
-git clone https://github.com/prsousa8/UFCtask.git
+git clone https://github.com/prsousa8/portifolio.git
 ~~~
 
 E entre na pasta do projeto usando 
 
 ~~~
-cd UFCtask
+cd portifolio
 ~~~
 
 
