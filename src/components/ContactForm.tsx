@@ -32,8 +32,9 @@ export default function ContactForm() {
         setStatus("Erro ao enviar. Tente novamente.");
       }
     } catch (error) {
-      setStatus("Erro ao enviar. Tente novamente.");
-    }
+        console.error("Erro ao enviar formulário:", error);
+        setStatus("Erro ao enviar. Tente novamente.");
+      }      
   };
 
   return (
