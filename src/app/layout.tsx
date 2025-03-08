@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Portifólio | Paulo Ricardo",
   description: "Portifólio profissional",
+  openGraph:{
+    images: "/app/opengraph-image.png"
+  }
 };
 
 export default function RootLayout({
