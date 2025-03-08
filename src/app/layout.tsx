@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   title: "Portifólio | Paulo Ricardo",
   description: "Portifólio profissional",
   openGraph:{
-    images: "/app/opengraph-image.png"
-  }
+    images: "/opengraph-image.png"
+  },
 };
 
 export default function RootLayout({
